@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ToDoMasterpage.master.cs" Inherits="ToDoWebApp.ToDoMasterpage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDo App</title>
+    <link href="bootstrap/customCSS.css" rel="stylesheet" />
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="datatables/jquerry/jquery.dataTables.min.js"></script>
+    <script src="bootstrap/clock.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+        
+        <form id="form1" runat="server">
+
+            <div class="container mt-2">
+                <div class="digital-clock">00:00:00 </div>
+                <asp:Label CssClass="data" ID="Clock" runat="server" Text=""></asp:Label>
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="Home.aspx">
+                            <img src="images/to-do-list.png" width="40" height="40" class="mr-2" /></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mr-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <asp:LinkButton CssClass="nav-item nav-link active" ID="ListBtn" runat="server" OnClick="List" Visible="False">List</asp:LinkButton>
+                                </li>
+                                <li class="nav-item">
+                                    <asp:LinkButton CssClass="nav-item nav-link active" ID="TaskBtn" runat="server" OnClick="Tasks" Visible="False">Tasks</asp:LinkButton>
+                                </li>
+                                <li class="nav-item">
+                                    <asp:LinkButton CssClass="nav-item nav-link active" ID="UsersBtn" runat="server" OnClick="Users" Visible="False">Users</asp:LinkButton>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav me-auto mb-lg-0">
+                                <li class="nav-item">
+                                    <asp:LinkButton CssClass="nav-item nav-link active" ID="HelloUserBtn" runat="server" Visible="True" Text="" OnClick="HelloUserBtn_Click"></asp:LinkButton>
+                                </li>
+                                <li class="nav-item">
+                                    <asp:LinkButton CssClass="nav-item nav-link active" ID="LoginBtn" runat="server" OnClick="Login" Visible="True">&nbsp;<img src="images/check-in.png" width="30" height="30" /></asp:LinkButton>
+                                </li>
+                                <li class="nav-item">
+                                    <asp:LinkButton CssClass="nav-item nav-link active" ID="LogoutBtn" runat="server" OnClick="Logout" Visible="False">&nbsp;<img src="images/check-out.png" width="30" height="30" /></asp:LinkButton>
+
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!--Main content placeholder-->
+
+            <div>
+                <asp:ContentPlaceHolder ID="MainContentPlaceholder" runat="server"></asp:ContentPlaceHolder>
+            </div>
+
+            <footer class="container-fluid fixed-bottom btn-sm">
+                <div class="container clock">
+                </div>
+                <p class="btn-sm text-muted">
+
+                    <small><cite>&copy All rights Reserved. Ana Maria RADU</cite></small>
+                </p>
+            </footer>
+
+        </form>
+
+</body>
+</html>

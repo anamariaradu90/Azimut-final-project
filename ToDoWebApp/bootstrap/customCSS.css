@@ -1,0 +1,29 @@
+﻿
+
+
+@font-face {
+    font-family: 'DIGITAL';
+    src: url('https://cssdeck.com/uploads/resources/fonts/digii/DS-DIGII.TTF');
+}
+
+.digital-clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    width: 200px;
+    height: 30px;
+    color: #1f7eec;
+    text-align: center;
+    font: 18px/25px 'DIGITAL', Helvetica;
+}
+
+.data {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: #1f7eec;
+}
+
